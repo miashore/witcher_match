@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+}
+.main-container {
+    width: 100%;
+    height: 100vh;
+}
+header {
+    height: 20vh;
+    background-color: #006699;
+    font-family: 'Dosis', Arial, sans-serif;
+}
+header .logo {
+    width: 10%;
+    height: 20vh;
+    background-color: #0f192a;
+    color: white;
+    float: left;
+}
+.title {
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    padding-top: 5%;
+    margin: 0;
+    font-family: 'Cinzel Decorative', cursive;
+}
+.links {
+    list-style-type: none;
+    margin: 0;
+}
+.links > li {
+    display: inline-block;
+    float: right;
+    padding-left: 3%;
+}
+.container {
+    width: 100%;
+    height: 100%;
+}
+.stats-container {
+    background-color: #428bdd;
+    color: white;
+    width: 15vw;
+    margin: 0;
+    display: inline-block;
+    float: left;
+    height: 100%;
+}
+.stats-container > div {
+    height: 20vh;
+    font-family: 'Dosis', Arial, sans-serif;
+}
+#game-area {
+    background-color: darkgray;
+    width: 80vw;
+    display: inline-block;
+    float: right;
+    height: 100%;
+}
+.card {
+    background-color: #81cef9;
+    width: 10%;
+    height: 20vh;
+    margin: 2%;
+    border: 1px solid black;
+    display: inline-block;
+}
