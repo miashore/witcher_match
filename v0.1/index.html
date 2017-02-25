@@ -2,124 +2,135 @@
 <html>
 <head>
     <title>Memory Match V0.1</title>
-    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Dosis" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Indie+Flower|NTR" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
 <div class="main-container">
     <!-- Heading -->
-    <header>
+    <header class="page-header">
         <div class="logo">
-            Game Logo
+            <img src="imgs/cat3.png" alt="cat logo">
         </div>
-        <ul class="links">
+        <ul class="links pull-right">
             <li><a href="#">Settings</a></li>
             <li><a href="about.html">About</a></li>
         </ul>
-        <div class="title">Memory Match</div>
+        <div class="title">Kitty Match</div>
     </header>
     <!-- Contains Stats and Game Area -->
-    <div class="container">
-        <div class="stats-container">
-            <div class="games-played">
-                <div class="label">
-                    Games Played:
+    <div class="container-fluid">
+        <div class="stats-container col-xs-3">
+            <div class="panel panel-success games-played">
+                <div class="panel-heading">
+                    <h3 class="panel-title side-label">Games Played</h3>
                 </div>
-                <div class="value">
-                    {Value}
-                </div>
-            </div>
-            <div class="attempts">
-                <div class="label">
-                    Attemps:
-                </div>
-                <div class="value">
-                    {value}
+                <div class="panel-body">
+                    <div class="value">
+                        {Value}
+                    </div>
                 </div>
             </div>
-            <div class="accuracy">
-                <div class="label">
-                    Accuracy:
+            <div class="panel panel-warning games-played">
+                <div class="panel-heading">
+                    <h3 class="panel-title side-label">Attempts</h3>
                 </div>
-                <div class="value">
-                    {value}
+                <div class="panel-body">
+                    <div class="value">
+                        {Value}
+                    </div>
                 </div>
             </div>
-            <button class="reset">Reset Game</button>
+            <div class="panel panel-info games-played">
+                <div class="panel-heading">
+                    <h3 class="panel-title side-label">Accuracy</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="value">
+                        {Value}
+                    </div>
+                </div>
+            </div>
+            <div class="btn btn-info type='button' reset">Reset Game</div>
+
         </div>
         <!-- Game area needs images-->
-        <div id="game-area">
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+        <div id="game-area" class="container-fluid col-xs-9">
+            <div class="card col-xs-2">
+                <div class="front thumbnail "><img src="imgs/cat1.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail "><img src="imgs/cat4.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/cat8.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/cat9.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/cat12.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/cat13.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/cat16.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/cat17.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/cat28.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/cat28.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/cat1.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/cat4.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/cat8.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/cat9.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/cat12.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/cat13.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/cat16.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/cat17.png" alt="cat"></div>
+                <div class="back thumbnail"><img src="imgs/yarn.png" alt="yarn"></div>
             </div>
         </div>
     </div>
