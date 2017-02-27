@@ -36,11 +36,25 @@
 }
 .card {
     height: 15vh;
+    position: relative;
+}
+.front, .back {
+    position: absolute;
+    top:0;
+    left:0;
+}
+.front {
+    z-index: -1;
 }
 .card img {
     width: 10vh;
     height: 10vh;
 }
-.front {
-    display: none;
+.img-container {
+    width: 30%;
+    float: left;
 }
+.author-pic {
+    width: 100%;
+}
+
