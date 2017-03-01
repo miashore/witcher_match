@@ -10,6 +10,7 @@ function initializeGame(){
 }
 function initializeClickHandler(){
     $('.back').click(handleClick);
+    $('.reset').click(matchReset);
 }
 function handleClick(){
     console.log("canBeClicked: " + canBeClicked);
@@ -33,6 +34,7 @@ function cardClicked(cardBack){
         var secondCardImg = $(secondCardClicked).parent().find('.front img').attr('src');
         if(firstCardImg === secondCardImg){
             console.log('they match');
+            matched();
             firstCardClicked = null;
             secondCardClicked = null;
             canBeClicked = true;
@@ -43,6 +45,14 @@ function cardClicked(cardBack){
             timeOut();
         }
     }
+}
+function matched(){
+    $('.attempts .value').text(matchCounter++);
+}
+function matchReset(){
+    $('.back').removeClass('flipped');
+    matchCounter = 0;
+    $('.attempts .value').text('');
 }
 function timeOut(){
     setTimeout(function(){
