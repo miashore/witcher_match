@@ -36,6 +36,7 @@ a:hover {
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center center;
+    height: 100vh;
 }
 .panel {
     border: none;
@@ -54,9 +55,14 @@ a:hover {
     font-family: 'Sort Mills Goudy', Georgia, serif;
     font-size: 1.3em;
     color: white;
+    text-align: center;
 }
 .btn:hover {
     background-color: #c90000;
+}
+.btn:active, .btn:focus, .btn-info:active,
+.btn-info:active:focus {
+    background-color: #810e0e;
 }
 .card {
     height: 25vh;
@@ -69,6 +75,9 @@ a:hover {
 }
 .back {
     z-index:1;
+}
+.flipped {
+    display: none;
 }
 .card img {
     width: 15vh;

@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
+    <!--<script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Exo|Sorts+Mill+Goudy" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="script.js"></script>
 </head>
 <body>
 <div class="main-container">
@@ -16,7 +17,7 @@
     <header class="page-header">
         <ul class="links pull-left">
             <li><a href="#">Settings</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="#">About</a></li>
         </ul>
         <div class="logo">
             <img src="imgs/wa/w3logo.png" alt="The Witcher 3 logo">
@@ -35,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div class="panel games-played">
+            <div class="panel attempts">
                 <div class="panel-heading">
                     <h3 class="panel-title side-label">Attempts</h3>
                 </div>
@@ -45,7 +46,7 @@
                     </div>
                 </div>
             </div>
-            <div class="panel games-played">
+            <div class="panel accuracy">
                 <div class="panel-heading">
                     <h3 class="panel-title side-label">Accuracy</h3>
                 </div>
@@ -60,73 +61,73 @@
         <!-- Game area -->
         <div id="game-area" class="container-fluid col-xs-9">
             <div class="card col-md-2 col-sm-3 col-xs-4">
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
                 <div class="front thumbnail "><img src="imgs/wa/fiend.png" alt="fiend"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-md-2 col-sm-3 col-xs-4">
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
                 <div class="front thumbnail "><img src="imgs/wa/griffin.png" alt="griffin"></div>
-            </div>
-            <div class="card col-md-2 col-sm-3 col-xs-4">
                 <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-                <div class="front thumbnail"><img src="imgs/wa/geralt.png" alt="geralt"></div>
             </div>
+            <!--<div class="card col-md-2 col-sm-3 col-xs-4">-->
+                <!--<div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>-->
+                <!--<div class="front thumbnail"><img src="imgs/wa/geralt.png" alt="geralt"></div>-->
+            <!--</div>-->
+            <!--<div class="card col-md-2 col-sm-3 col-xs-4">-->
+                <!--<div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>-->
+                <!--<div class="front thumbnail"><img src="imgs/wa/wildhunt.png" alt="the wild hunt"></div>-->
+            <!--</div>-->
+            <!--<div class="card col-md-2 col-sm-3 col-xs-4">-->
+                <!--<div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>-->
+                <!--<div class="front thumbnail"><img src="imgs/wa/triss.png" alt="triss"></div>-->
+            <!--</div>-->
+            <!--<div class="card col-md-2 col-sm-3 col-xs-4">-->
+                <!--<div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>-->
+                <!--<div class="front thumbnail"><img src="imgs/wa/geralt.png" alt="geralt"></div>-->
+            <!--</div>-->
             <div class="card col-md-2 col-sm-3 col-xs-4">
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-                <div class="front thumbnail"><img src="imgs/wa/wildhunt.png" alt="the wild hunt"></div>
-            </div>
-            <div class="card col-md-2 col-sm-3 col-xs-4">
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-                <div class="front thumbnail"><img src="imgs/wa/triss.png" alt="triss"></div>
-            </div>
-            <div class="card col-md-2 col-sm-3 col-xs-4">
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-                <div class="front thumbnail"><img src="imgs/wa/geralt.png" alt="geralt"></div>
-            </div>
-            <div class="card col-md-2 col-sm-3 col-xs-4">
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
                 <div class="front thumbnail"><img src="imgs/wa/griffin.png" alt="griffin"></div>
-            </div>
-            <div class="card col-md-2 col-sm-3 col-xs-4">
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="yen"></div>
-                <div class="front thumbnail"><img src="imgs/wa/yen.png" alt="yen"></div>
-            </div>
-            <div class="card col-md-2 col-sm-3 col-xs-4">
                 <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-                <div class="front thumbnail"><img src="imgs/wa/werewolf.png" alt="werewolf"></div>
             </div>
-            <div class="card col-md-2 col-sm-3 col-xs-4">
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="yarn"></div>
-                <div class="front thumbnail"><img src="imgs/wa/swamphag.png" alt="cat"></div>
-            </div>
-            <div class="card col-md-2 col-sm-3 col-xs-4">
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="yarn"></div>
-                <div class="front thumbnail"><img src="imgs/wa/botchling.png" alt="botchling"></div>
-            </div>
-            <div class="card col-md-2 col-sm-3 col-xs-4">
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-                <div class="front thumbnail"><img src="imgs/wa/werewolf.png" alt="werewolf"></div>
-            </div>
-            <div class="card col-md-2 col-sm-3 col-xs-4">
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-                <div class="front thumbnail"><img src="imgs/wa/botchling.png" alt="botchling"></div>
-            </div>
-            <div class="card col-md-2 col-sm-3 col-xs-4">
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-                <div class="front thumbnail"><img src="imgs/wa/triss.png" alt="triss"></div>
-            </div>
-            <div class="card col-md-2 col-sm-3 col-xs-4">
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-                <div class="front thumbnail"><img src="imgs/wa/wildhunt.png" alt="the wild hunt"></div>
-            </div>
-            <div class="card col-md-2 col-sm-3 col-xs-4">
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="yarn"></div>
-                <div class="front thumbnail"><img src="imgs/wa/swamphag.png" alt="cat"></div>
-            </div>
-            <div class="card col-md-2 col-sm-3 col-xs-4">
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="yarn"></div>
-                <div class="front thumbnail"><img src="imgs/wa/yen.png" alt="cat"></div>
-            </div>
+            <!--<div class="card col-md-2 col-sm-3 col-xs-4">-->
+                <!--<div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="yen"></div>-->
+                <!--<div class="front thumbnail"><img src="imgs/wa/yen.png" alt="yen"></div>-->
+            <!--</div>-->
+            <!--<div class="card col-md-2 col-sm-3 col-xs-4">-->
+                <!--<div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>-->
+                <!--<div class="front thumbnail"><img src="imgs/wa/werewolf.png" alt="werewolf"></div>-->
+            <!--</div>-->
+            <!--<div class="card col-md-2 col-sm-3 col-xs-4">-->
+                <!--<div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>-->
+                <!--<div class="front thumbnail"><img src="imgs/wa/swamphag.png" alt="cat"></div>-->
+            <!--</div>-->
+            <!--<div class="card col-md-2 col-sm-3 col-xs-4">-->
+                <!--<div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="yarn"></div>-->
+                <!--<div class="front thumbnail"><img src="imgs/wa/botchling.png" alt="botchling"></div>-->
+            <!--</div>-->
+            <!--<div class="card col-md-2 col-sm-3 col-xs-4">-->
+                <!--<div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>-->
+                <!--<div class="front thumbnail"><img src="imgs/wa/werewolf.png" alt="werewolf"></div>-->
+            <!--</div>-->
+            <!--<div class="card col-md-2 col-sm-3 col-xs-4">-->
+                <!--<div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>-->
+                <!--<div class="front thumbnail"><img src="imgs/wa/botchling.png" alt="botchling"></div>-->
+            <!--</div>-->
+            <!--<div class="card col-md-2 col-sm-3 col-xs-4">-->
+                <!--<div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>-->
+                <!--<div class="front thumbnail"><img src="imgs/wa/triss.png" alt="triss"></div>-->
+            <!--</div>-->
+            <!--<div class="card col-md-2 col-sm-3 col-xs-4">-->
+                <!--<div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>-->
+                <!--<div class="front thumbnail"><img src="imgs/wa/wildhunt.png" alt="the wild hunt"></div>-->
+            <!--</div>-->
+            <!--<div class="card col-md-2 col-sm-3 col-xs-4">-->
+                <!--<div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="yarn"></div>-->
+                <!--<div class="front thumbnail"><img src="imgs/wa/swamphag.png" alt="cat"></div>-->
+            <!--</div>-->
+            <!--<div class="card col-md-2 col-sm-3 col-xs-4">-->
+                <!--<div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="yarn"></div>-->
+                <!--<div class="front thumbnail"><img src="imgs/wa/yen.png" alt="cat"></div>-->
+            <!--</div>-->
             <div class="card col-md-2 col-sm-3 col-xs-4">
                 <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="yarn"></div>
                 <div class="front thumbnail"><img src="imgs/wa/fiend.png" alt="cat"></div>
