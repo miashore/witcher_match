@@ -12,11 +12,10 @@ function initializeClickHandler(){
     $('.back').click(handleClick);
 }
 function handleClick(){
-    if(firstCardClicked !== null && secondCardClicked !== null){
-        return false;
+    console.log("canBeClicked: " + canBeClicked);
+    if(canBeClicked === true){
+        cardClicked(this);
     }
-    cardClicked(this);
-
 }
 function flipCard(cardBack){
     $(cardBack).addClass('flipped');
@@ -29,15 +28,16 @@ function cardClicked(cardBack){
     } else {
         console.log('second clicked');
         secondCardClicked = cardBack;
+        canBeClicked = false;
         var firstCardImg = $(firstCardClicked).parent().find('.front img').attr('src');
         var secondCardImg = $(secondCardClicked).parent().find('.front img').attr('src');
         if(firstCardImg === secondCardImg){
             console.log('they match');
             firstCardClicked = null;
             secondCardClicked = null;
+            canBeClicked = true;
         } else{
             console.log('they don\'t match');
-
             firstCardClicked = null;
             secondCardClicked = null;
             timeOut();
@@ -46,8 +46,9 @@ function cardClicked(cardBack){
 }
 function timeOut(){
     setTimeout(function(){
+        canBeClicked = true;
         unflipCard();
-    }, 1000);
+    }, 2000);
 }
 function unflipCard(){
         $('.front').parent().find('.back').removeClass('flipped');

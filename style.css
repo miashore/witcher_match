@@ -1,4 +1,3 @@
-
 .links {
     list-style-type: none;
     font-family: 'Exo', Helvetica, sans-serif;
@@ -34,16 +33,16 @@ a:hover {
 .main-container{
     background-image: url('imgs/wa/w3_wp04.jpg');
     background-repeat:no-repeat;
-    background-size:cover;
+    background-size: cover;
     background-position:center center;
     height: 100vh;
+}
+#game-area {
+    height: 100%;
 }
 .panel {
     border: none;
     background-color: rgba(255,255,255,0.4);
-}
-.panel-body {
-    #background-color: rgba(255,255,255,0.4);
 }
 .panel-heading, button, .btn {
     font-family: 'Exo', Helvetica, serif;
@@ -90,10 +89,17 @@ a:hover {
 .author-pic {
     width: 100%;
 }
-
-@media (max-width: 750px){
+@media (max-width: 991px){
+    .main-container {
+        height:150vh;
+    }
+}
+@media (max-width: 767px){
     .links {
         top: 15%;
         left: -10%;
+    }
+    .main-container {
+        height: 165vh;
     }
 }
