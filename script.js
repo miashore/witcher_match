@@ -14,9 +14,9 @@ function initializeClickHandler(){
 function handleClick(){
     if(firstCardClicked !== null && secondCardClicked !== null){
         return false;
-    } else {
-        cardClicked(this);
     }
+    cardClicked(this);
+
 }
 function flipCard(cardBack){
     $(cardBack).addClass('flipped');
