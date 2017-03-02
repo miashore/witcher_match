@@ -1,8 +1,9 @@
 var firstCardClicked = null;
 var secondCardClicked = null;
-var totalPossibleMatches = 2;
-var matchCounter = 0;
+var totalPossibleMatches = 9;
+var matchCounter = 1;
 var canBeClicked = true;
+var matched = true;
 
 function initializeGame(){
     console.log('initialized');
@@ -16,7 +17,9 @@ function handleClick(){
     console.log("canBeClicked: " + canBeClicked);
     if(canBeClicked === true){
         cardClicked(this);
+        attempts();
     }
+    accuracy();
 }
 function flipCard(cardBack){
     $(cardBack).addClass('flipped');
@@ -34,21 +37,28 @@ function cardClicked(cardBack){
         var secondCardImg = $(secondCardClicked).parent().find('.front img').attr('src');
         if(firstCardImg === secondCardImg){
             console.log('they match');
-            matched();
             firstCardClicked = null;
             secondCardClicked = null;
             canBeClicked = true;
+            matched = true;
+            console.log(matched);
         } else{
             console.log('they don\'t match');
+            matched = false;
+            console.log(matched);
             timeOut();
-            firstCardClicked = null;
-            secondCardClicked = null;
         }
     }
 }
-function matched(){
-    var misMatched = null;
-
+function attempts(){
+    if(canBeClicked == false || firstCardClicked == secondCardClicked){
+        $('.attempts .value').text(matchCounter++);
+    }
+}
+function accuracy(){
+    var accuracyVal = (matchCounter/totalPossibleMatches)*100; //need to isolate successful matches
+    accuracyVal = accuracyVal.toFixed(2);
+    $('.accuracy .value').text(accuracyVal + '%');
 }
 function matchReset(){
     $('.back').removeClass('flipped');
@@ -56,18 +66,19 @@ function matchReset(){
     $('.attempts .value').text('');
 }
 function timeOut(){
-    setTimeout(function(){
-        canBeClicked = true;
-        unflipCard();
-    }, 2000);
+        setTimeout(function(){
+            unflipCard(firstCardClicked,secondCardClicked);
+            canBeClicked = true;
+            firstCardClicked = null;
+            secondCardClicked = null;
+        }, 2000);
 }
-function unflipCard(){
-    if(firstCardClicked != null && secondCardClicked != null){
-        $('.front').parent().find('.back').removeClass('flipped');
-
+function unflipCard(firstClicked, secondClicked){
+        $(firstClicked).parent().find('.back').removeClass('flipped');
+        $(secondClicked).last().removeClass('flipped');
 }
 function resetGame(){
-    $('.front').parent().find('.back').removeClass('flipped');
+    //$('.front').parent().find('.back').removeClass('flipped');
 }
 $(document).ready(initializeGame);
 
