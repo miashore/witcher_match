@@ -40,14 +40,15 @@ function cardClicked(cardBack){
             canBeClicked = true;
         } else{
             console.log('they don\'t match');
+            timeOut();
             firstCardClicked = null;
             secondCardClicked = null;
-            timeOut();
         }
     }
 }
 function matched(){
-    $('.attempts .value').text(matchCounter++);
+    var misMatched = null;
+
 }
 function matchReset(){
     $('.back').removeClass('flipped');
@@ -61,7 +62,12 @@ function timeOut(){
     }, 2000);
 }
 function unflipCard(){
+    if(firstCardClicked != null && secondCardClicked != null){
         $('.front').parent().find('.back').removeClass('flipped');
+
+}
+function resetGame(){
+    $('.front').parent().find('.back').removeClass('flipped');
 }
 $(document).ready(initializeGame);
 
