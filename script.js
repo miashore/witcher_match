@@ -4,6 +4,8 @@ var totalPossibleMatches = 9;
 var matchCounter = 1;
 var canBeClicked = true;
 var matched = true;
+var trueMatch = 0;
+var gameplayCount = 1;
 
 function initializeGame(){
     console.log('initialized');
@@ -19,7 +21,6 @@ function handleClick(){
         cardClicked(this);
         attempts();
     }
-    accuracy();
 }
 function flipCard(cardBack){
     $(cardBack).addClass('flipped');
@@ -41,6 +42,7 @@ function cardClicked(cardBack){
             secondCardClicked = null;
             canBeClicked = true;
             matched = true;
+            trueMatch++;
             console.log(matched);
         } else{
             console.log('they don\'t match');
@@ -48,6 +50,7 @@ function cardClicked(cardBack){
             console.log(matched);
             timeOut();
         }
+        accuracy();
     }
 }
 function attempts(){
@@ -56,7 +59,7 @@ function attempts(){
     }
 }
 function accuracy(){
-    var accuracyVal = (matchCounter/totalPossibleMatches)*100; //need to isolate successful matches
+    var accuracyVal = (trueMatch/matchCounter)*100;
     accuracyVal = accuracyVal.toFixed(2);
     $('.accuracy .value').text(accuracyVal + '%');
 }
@@ -64,18 +67,23 @@ function matchReset(){
     $('.back').removeClass('flipped');
     matchCounter = 0;
     $('.attempts .value').text('');
+    $('.accuracy .value').text('');
 }
 function timeOut(){
-        setTimeout(function(){
-            unflipCard(firstCardClicked,secondCardClicked);
+    setTimeout(function(){
+        unflipCard(firstCardClicked,secondCardClicked);
             canBeClicked = true;
             firstCardClicked = null;
             secondCardClicked = null;
-        }, 2000);
+    }, 2000);
 }
 function unflipCard(firstClicked, secondClicked){
         $(firstClicked).parent().find('.back').removeClass('flipped');
         $(secondClicked).last().removeClass('flipped');
+}
+function gamesPlayed(){
+    $('.games-played .value').text(gameplayCount++)
+
 }
 function resetGame(){
     //$('.front').parent().find('.back').removeClass('flipped');
