@@ -1,3 +1,10 @@
+body{
+    background: url(imgs/wa/w3_wp04.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 .links {
     list-style-type: none;
     font-family: 'Exo', Helvetica, sans-serif;
@@ -19,9 +26,12 @@ a:hover {
     color: #1e2151;
 }
 .page-header {
-    margin-top: 0;
-    background-color: #810e0e;
+    margin: 0 0 2% 0;
     position: relative;
+    border: none;
+    background: radial-gradient(black 12%, transparent 9%) 0 0, radial-gradient(black 12%, transparent 0%) 8px 8px, radial-gradient(rgba(240,0,50,.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(240,0,50,.1) 15%, transparent 20%) 8px 9px;
+    background-color: #330b0b;
+    background-size: 15px 15px;
 }
 .logo {
     margin: 0 auto;
@@ -31,14 +41,10 @@ a:hover {
     width: 100%;
 }
 .main-container{
-    background-image: url('imgs/wa/w3_wp04.jpg');
-    background-repeat:no-repeat;
-    background-size: cover;
-    background-position:center center;
-    height: 100vh;
-}
-#game-area {
     height: 100%;
+}
+.stats-container {
+    text-align: center;
 }
 .panel {
     border: none;
@@ -54,7 +60,6 @@ a:hover {
     font-family: 'Sort Mills Goudy', Georgia, serif;
     font-size: 1.3em;
     color: white;
-    text-align: center;
 }
 .btn:hover {
     background-color: #c90000;
@@ -62,6 +67,18 @@ a:hover {
 .btn:active, .btn:focus, .btn-info:active,
 .btn-info:active:focus {
     background-color: #810e0e;
+}
+.progress:first-of-type {
+    margin-top: 2%;
+}
+.progress-bar.progress-bar-danger {
+    width: 70%;
+}
+.progress-bar.progress-bar-warning {
+    width: 100%;
+}
+#game-area {
+    height: 100%;
 }
 .card {
     height: 25vh;
@@ -85,17 +102,9 @@ a:hover {
 .author-pic {
     width: 100%;
 }
-@media (max-width: 991px){
-    .main-container {
-        height:150vh;
-    }
-}
 @media (max-width: 767px){
     .links {
         top: 15%;
         left: -10%;
-    }
-    .main-container {
-        height: 165vh;
     }
 }
