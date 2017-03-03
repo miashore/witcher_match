@@ -65,16 +65,24 @@ function accuracy(){
 }
 function matchReset(){
     $('.back').removeClass('flipped');
-    matchCounter = 0;
+    matchCounter = 1;
+    trueMatch = 0;
     $('.attempts .value').text('');
     $('.accuracy .value').text('');
+    gamesPlayed();
+}
+function wiggle(){
+    $('.back').click(function(){
+        $(this).effect('shake', {distance:2}, 300);
+    });
 }
 function timeOut(){
     setTimeout(function(){
         unflipCard(firstCardClicked,secondCardClicked);
-            canBeClicked = true;
-            firstCardClicked = null;
-            secondCardClicked = null;
+        wiggle();
+        canBeClicked = true;
+        firstCardClicked = null;
+        secondCardClicked = null;
     }, 2000);
 }
 function unflipCard(firstClicked, secondClicked){
@@ -82,8 +90,7 @@ function unflipCard(firstClicked, secondClicked){
         $(secondClicked).last().removeClass('flipped');
 }
 function gamesPlayed(){
-    $('.games-played .value').text(gameplayCount++)
-
+    $('.games-played .value').text(gameplayCount++);
 }
 function resetGame(){
     //$('.front').parent().find('.back').removeClass('flipped');
