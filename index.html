@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Memory Match V0.5</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1"/>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -53,6 +53,83 @@
             </div>
         </div>
         <button class="btn btn-info type='button' reset">Reset Game</button>
+    </div>
+        <!-- Game area -->
+        <div id="game-area" class="container col-xs-10">
+            <div class="card col-xs-2">
+                <div class="front thumbnail "><img src="imgs/wa/fiend.png" alt="fiend"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail "><img src="imgs/wa/griffin.png" alt="griffin"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/wa/geralt.png" alt="geralt"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/wa/wildhunt.png" alt="the wild hunt"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/wa/triss.png" alt="triss"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/wa/geralt.png" alt="geralt"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/wa/griffin.png" alt="griffin"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/wa/yen.png" alt="yen"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/wa/werewolf.png" alt="werewolf"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/wa/swamphag.png" alt="swamphag"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/wa/botchling.png" alt="botchling"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="yarn"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/wa/werewolf.png" alt="werewolf"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/wa/botchling.png" alt="botchling"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/wa/triss.png" alt="triss"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/wa/wildhunt.png" alt="the wild hunt"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/wa/swamphag.png" alt="swamphag"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/wa/yen.png" alt="yen"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+            <div class="card col-xs-2">
+                <div class="front thumbnail"><img src="imgs/wa/fiend.png" alt="fiend"></div>
+                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+            </div>
+        </div>
+    <div class="health-stats col-xs-12">
         <div class="progress">
             <div class="progress-bar progress-bar-danger health-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
                 <span class="sr-only">70% Complete</span>
@@ -64,81 +141,6 @@
             </div>
         </div>
     </div>
-        <!-- Game area -->
-        <div id="game-area" class="container col-xs-10">
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail "><img src="imgs/wa/fiend.png" alt="fiend"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail "><img src="imgs/wa/griffin.png" alt="griffin"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail"><img src="imgs/wa/geralt.png" alt="geralt"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail"><img src="imgs/wa/wildhunt.png" alt="the wild hunt"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail"><img src="imgs/wa/triss.png" alt="triss"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail"><img src="imgs/wa/geralt.png" alt="geralt"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail"><img src="imgs/wa/griffin.png" alt="griffin"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail"><img src="imgs/wa/yen.png" alt="yen"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail"><img src="imgs/wa/werewolf.png" alt="werewolf"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail"><img src="imgs/wa/swamphag.png" alt="swamphag"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail"><img src="imgs/wa/botchling.png" alt="botchling"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="yarn"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail"><img src="imgs/wa/werewolf.png" alt="werewolf"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail"><img src="imgs/wa/botchling.png" alt="botchling"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail"><img src="imgs/wa/triss.png" alt="triss"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail"><img src="imgs/wa/wildhunt.png" alt="the wild hunt"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail"><img src="imgs/wa/swamphag.png" alt="swamphag"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail"><img src="imgs/wa/yen.png" alt="yen"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-            <div class="card col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                <div class="front thumbnail"><img src="imgs/wa/fiend.png" alt="fiend"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
-            </div>
-        </div>
 </div>
 </body>
 </html>

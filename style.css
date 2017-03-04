@@ -35,20 +35,32 @@ a:hover {
 }
 .logo {
     margin: 0 auto;
-    width: 30%;
+    width: 20%;
 }
 .logo img {
     width: 100%;
+    margin: 3% 0 0 0;
 }
 .main-container{
     height: 100%;
 }
-.stats-container {
+.stats-container{
     text-align: center;
+    padding-left: 0;
 }
 .panel {
     border: none;
     background-color: rgba(255,255,255,0.4);
+    border-bottom-left-radius: 0;
+}
+.panel-title, .value{
+    font-size: 3vmin;
+}
+.panel-body {
+    padding: 0;
+}
+.panel-heading {
+    border-top-left-radius: 0;
 }
 .panel-heading, button, .btn {
     font-family: 'Exo', Helvetica, serif;
@@ -58,7 +70,6 @@ a:hover {
 }
 .value {
     font-family: 'Sort Mills Goudy', Georgia, serif;
-    font-size: 1.3em;
     color: white;
 }
 .btn:hover {
@@ -68,14 +79,32 @@ a:hover {
 .btn-info:active:focus {
     background-color: #810e0e;
 }
-.progress:first-of-type {
-    margin-top: 2%;
+.health-stats {
+    position: fixed;
+    bottom:0;
+    left: 0;
+}
+.health-stats.col-xs-12 {
+    padding: 0;
 }
 .progress-bar.progress-bar-danger {
     width: 70%;
+    background-color: #cd0000;
 }
 .progress-bar.progress-bar-warning {
     width: 100%;
+}
+.progress {
+    height: 2vh;
+    margin: 0;
+    border-radius: 0;
+    background-color: rgba(0,0,0,0.8);
+}
+.progress:last-child {
+    height: 1vh;
+    -webkit-box-shadow: 0 50px 100px 100px rgba(255, 0, 71, 0.31);
+    -moz-box-shadow: 0 50px 100px 100px rgba(255, 0, 71, 0.31);
+    box-shadow: 0 50px 100px 100px rgba(255, 0, 71, 0.31);
 }
 #game-area {
     height: 100%;
@@ -92,12 +121,16 @@ a:hover {
 .back {
     z-index:1;
 }
+.thumbnail {
+    padding: 0;
+}
 .flipped {
     display: none;
 }
 .card img {
     width: 15vh;
     height: 20vh;
+    border-radius: 4px;
 }
 .author-pic {
     width: 100%;
@@ -107,4 +140,11 @@ a:hover {
         top: 15%;
         left: -10%;
     }
+    /*.card {*/
+        /*height: 20vh;*/
+        /*margin: 0 0 2% 0;*/
+    /*}*/
+    /*#game-area {*/
+        /*height: 100vh;*/
+    /*}*/
 }
