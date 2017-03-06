@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-# Memory Match - Version 0.5 (v0.5)
-=======
+
 # Memory Match
 
 ### Overview
 
-> Version 1.0 continues where version 0.5 stopped by adding in the statistics of the memory match game. When a user clicks on a card the application will start tracking how many matches versus how many attempts. In combination with the stats there is also a tracker for how many times the game is played. Games played is tracked by resetting / restarting the game.
->>>>>>> ebec6bea9af995e6ec8e6af2dfd5ef05b3939187
 
 > ##### Related Reading
 
@@ -55,45 +51,6 @@
     - Pull latest merged code
         - `git pull origin master`
 
-<<<<<<< HEAD
-#### Scope
-
-> - Create 4 card static layout by removing 7 of the nine matching cards
-> - Add a click handler to each card by 1 of these 2 methods
->   - jQuery - Intermediate
->       - Add click method to a jQuery Selector with the parameter equal to a function called card_clicked
->   - onclick attribute - Fundamentals
->       - the value of the attribute on each element should be set to card_clicked with a parameter of the keyword this
-> - Declare and assign 3 global (see scope presentation) variables
->   - **first_card_clicked** assigned to null
->   - **second_card_clicked** assigned to null
->   - **total_possible_matches** assign to number of total possible matches (in this case 2)
->   - **match_counter** assigned to 0
-> - Declare card_clicked function in the script.js file with the following functionality in it
->   - Show the card face
->   - Check if variable first_card_clicked is null
->       - **true** - assign first_card_clicked equal to the html DOM Element that was clicked
->           - click handler functionality is complete, return
->       - **false** - assign second_card_clicked to the html DOM Element that was clicked
->           - check if first_card_clicked is equivalent to the second_card_clicked
->               - **true**
->                   - increment match_counter by 1
->                   - reset both variables defined above to null again and then wait for next card click
->                   - check if match_counter is equivalent to total_possible_matches
->                       - **true**
->                           - Display a message to the user they have won
->                       - **false**
->                           - click handler functionality is complete, return
->               - **false**
->                   - Wait 2 seconds then
->                       - Be wary of waiting programmatically but not being able to control the user from clicking on cards while the program waits execute the reset of the code
->                       - Show card back on both elements that are flipped over
->                       - reset both card_clicked
->                       - variables to null
->                       - click handler functionality is complete, return
-> <img src="https://docs.google.com/drawings/d/1JT0nsiTg3HXG2L3QFPnfAmPoQDWUCRNKDvl2qr1r9xo/pub?w=960&h=720" width="750"/>
-
-=======
 ### Scope
 
 >- Adding Stats
@@ -120,4 +77,4 @@
         - call reset_stats
         - call display_stats
         - Reset all cards to have the back face showing
->>>>>>> ebec6bea9af995e6ec8e6af2dfd5ef05b3939187
+
