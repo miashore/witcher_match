@@ -140,65 +140,19 @@ function particles(){
     var BOUNCE = -1;
     var PARTICLE_COLOR = 'rgba(200, 0, 50,.6)';
     var ARC_RADIUS = 1;
-    /**
-     * Particles lib class
-     *
-     * @class Particles
-     * @constructor
-     */
     var Particles = function($element) {
-        // if element doesnt exist in the DOM return early
         if ($element.length === 0) { return; }
-        /**
-         * A reference to the containing DOM element.
-         *
-         * @default null
-         * @property {jQuery} $element
-         * @public
-         */
         this.$element = $element;
-        /**
-         * Initial timestamp use to for baseline of animation loop
-         *
-         * @default null
-         * @property lastTimeStamp
-         * @type {number}
-         * @public
-         */
         this.lastTimeStamp = null;
-        /**
-         * array representing particles
-         *
-         * @default empty array
-         * @property lastTimeStamp
-         * @type {array}
-         * @public
-         */
         this.particles = [];
         this.init();
     };
     var proto = Particles.prototype;
-    /**
-     * Initializes the class.
-     * Runs a single setupHandlers call, followed by createChildren and layout.
-     * Exits early if it is already initialized.
-     *
-     * @method init
-     * @private
-     */
     proto.init = function() {
         this.createChildren()
             .layout()
             .enable();
     };
-    /**
-     * Create any child objects or references to DOM elements.
-     * Should only be run on initialization of the view.
-     *
-     * @method createChildren
-     * @returns {Particles}
-     * @private
-     */
     proto.createChildren = function() {
         this.canvas = this.$element[0];
         this.context = this.canvas.getContext('2d');
@@ -207,13 +161,6 @@ function particles(){
         this.lastTimeStamp = new Date().getTime();
         return this;
     };
-    /**
-     * handles layout of DOM elements
-     *
-     * @method layout
-     * @returns {ParticlesController}
-     * @private
-     */
     proto.layout = function() {
         window.requestAnimFrame = (function() {
             return  window.requestAnimationFrame       ||
@@ -222,13 +169,6 @@ function particles(){
         })();
         return this;
     };
-    /**
-     * Remove any child objects or references to DOM elements.
-     *
-     * @method removeChildren
-     * @returns {Particles}
-     * @public
-     */
     proto.removeChildren = function() {
         this.context = null;
         this.canvasWidth = null;
@@ -236,24 +176,10 @@ function particles(){
         this.lastTimeStamp = null;
         return this;
     };
-    /**
-     * Enables the component.
-     * Performs any event binding to handlers.
-     * Exits early if it is already enabled.
-     *
-     * @method enable
-     * @public
-     */
     proto.enable = function() {
         this.createParticleData();
         this.renderLoop();
     };
-    /**
-     * Creates particle data objects
-     *
-     * @method createParticleData
-     * @private
-     */
     proto.createParticleData = function() {
         var i = 0;
         var l = PARTICLE_QUANT;
@@ -263,24 +189,12 @@ function particles(){
             this.setParticleData(this.particles[i]);
         }
     };
-    /**
-     * Sets the base particle data
-     *
-     * @method setParticleData
-     * @private
-     */
     proto.setParticleData = function(particle) {
         particle.x = Math.random() * this.canvasWidth;
         particle.y = Math.random() * this.canvasHeight;
         particle.vx = (Math.random()) - 0.5;
         particle.vy = (Math.random()) - 0.5;
     };
-    /**
-     * Updates the particle data object
-     *
-     * @method update
-     * @private
-     */
     proto.update = function() {
         var i = 0;
         var l = PARTICLE_QUANT;
@@ -308,12 +222,6 @@ function particles(){
             }
         }
     };
-    /**
-     * Renders the particle on the canvas
-     *
-     * @method draw
-     * @private
-     */
     proto.draw = function() {
         var i = 0;
 
@@ -332,12 +240,6 @@ function particles(){
             this.context.restore();
         }
     };
-    /**
-     * Creates the animation loop
-     *
-     * @method renderLoop
-     * @private
-     */
     proto.renderLoop = function() {
         requestAnimationFrame(this.renderLoop.bind(this));
         this.update();
