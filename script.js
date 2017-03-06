@@ -24,6 +24,7 @@ function handleClick(){
     if(canBeClicked === true){
         cardClicked(this);
         attempts();
+        resetGame();
     }
 }
 function flipCard(cardBack){
@@ -345,6 +346,8 @@ function particles(){
     var particles = new Particles($('#js-particles'));
 }
 function resetGame(){
-    //$('.front').parent().find('.back').removeClass('flipped');
+    if(trueMatch === totalPossibleMatches){
+        $('.front').parent().find('.back').removeClass('flipped');
+    }
 }
 $(document).ready(initializeGame);
