@@ -15,13 +15,15 @@ function initializeGame(){
 function initializeClickHandler(){
     $('.back').click(handleClick);
     $('.reset').click(matchReset);
+    rules();
+    staminaMeter();
+    healthMeter();
 }
 function handleClick(){
     console.log("canBeClicked: " + canBeClicked);
     if(canBeClicked === true){
         cardClicked(this);
         attempts();
-        staminaMeter();
     }
 }
 function flipCard(cardBack){
@@ -80,9 +82,9 @@ function wiggle(){
 }
 function timeOut(){
     setTimeout(function(){
+        staminaReplenish();
         unflipCard(firstCardClicked,secondCardClicked);
         wiggle();
-        staminaMeter();
         canBeClicked = true;
         firstCardClicked = null;
         secondCardClicked = null;
@@ -92,30 +94,43 @@ function unflipCard(firstClicked, secondClicked){
         $(firstClicked).parent().find('.back').removeClass('flipped');
         $(secondClicked).last().removeClass('flipped');
 }
-function gamesPlayed(){
+function gamesPlayed() {
     $('.games-played .value').text(gameplayCount++);
 }
 function healthMeter(){
-
+    var $healthBar = $('.progress-bar.progress-bar-danger');
+    $('.back').click(function(){
+       if(matched == false){
+           $healthBar.animate({
+               width: 90 + '%'
+           }, 500);
+       }
+    });
 }
 function staminaMeter() {
     var $staminaBar = $('.progress-bar-warning');
     $('.back').click(function(){
-        if (firstCardClicked == true) {
+        if(firstCardClicked != null) {
             $staminaBar.animate({
                 width: '50%'
-            }, 500);
-            console.log('width is ' + $staminaBar);
-        } else if (secondCardClicked == true) {
-            $staminaBar.animate({
-                width: 0
-            }, 500);
-            console.log('width is ' + $staminaBar);
-        } else {
-            $staminaBar.animate({
-                width: '100%'
-            }, 500);
+            }, 100);
+            if(secondCardClicked != null) {
+                $staminaBar.animate({
+                    width: '0%'
+                }, 100);
+            }
         }
+    });
+}
+function staminaReplenish(){
+    var $staminaBar = $('.progress-bar-warning');
+    $staminaBar.animate({
+        width: '100%'
+    }, 50);
+}
+function rules(){
+    $('.rules').click(function(){
+        $('#rules-modal').modal('show');
     });
 }
 function particles(){
@@ -124,7 +139,6 @@ function particles(){
     var BOUNCE = -1;
     var PARTICLE_COLOR = 'rgba(200, 0, 50,.6)';
     var ARC_RADIUS = 1;
-
     /**
      * Particles lib class
      *
@@ -134,7 +148,6 @@ function particles(){
     var Particles = function($element) {
         // if element doesnt exist in the DOM return early
         if ($element.length === 0) { return; }
-
         /**
          * A reference to the containing DOM element.
          *
@@ -143,7 +156,6 @@ function particles(){
          * @public
          */
         this.$element = $element;
-
         /**
          * Initial timestamp use to for baseline of animation loop
          *
@@ -153,7 +165,6 @@ function particles(){
          * @public
          */
         this.lastTimeStamp = null;
-
         /**
          * array representing particles
          *
@@ -163,12 +174,9 @@ function particles(){
          * @public
          */
         this.particles = [];
-
         this.init();
     };
-
     var proto = Particles.prototype;
-
     /**
      * Initializes the class.
      * Runs a single setupHandlers call, followed by createChildren and layout.
@@ -182,7 +190,6 @@ function particles(){
             .layout()
             .enable();
     };
-
     /**
      * Create any child objects or references to DOM elements.
      * Should only be run on initialization of the view.
@@ -197,10 +204,8 @@ function particles(){
         this.canvasWidth = this.canvas.width;
         this.canvasHeight = this.canvas.height;
         this.lastTimeStamp = new Date().getTime();
-
         return this;
     };
-
     /**
      * handles layout of DOM elements
      *
@@ -214,10 +219,8 @@ function particles(){
                 window.webkitRequestAnimationFrame         ||
                 window.mozRequestAnimationFrame;
         })();
-
         return this;
     };
-
     /**
      * Remove any child objects or references to DOM elements.
      *
@@ -230,10 +233,8 @@ function particles(){
         this.canvasWidth = null;
         this.canvasHeight = null;
         this.lastTimeStamp = null;
-
         return this;
     };
-
     /**
      * Enables the component.
      * Performs any event binding to handlers.
@@ -246,11 +247,6 @@ function particles(){
         this.createParticleData();
         this.renderLoop();
     };
-
-    //////////////////////////////////////////////////////////////////////////////////
-    // HELPER METHODS
-    //////////////////////////////////////////////////////////////////////////////////
-
     /**
      * Creates particle data objects
      *
@@ -266,7 +262,6 @@ function particles(){
             this.setParticleData(this.particles[i]);
         }
     };
-
     /**
      * Sets the base particle data
      *
@@ -279,7 +274,6 @@ function particles(){
         particle.vx = (Math.random()) - 0.5;
         particle.vy = (Math.random()) - 0.5;
     };
-
     /**
      * Updates the particle data object
      *
@@ -313,7 +307,6 @@ function particles(){
             }
         }
     };
-
     /**
      * Renders the particle on the canvas
      *
@@ -326,7 +319,6 @@ function particles(){
         if (!this.context) {
             return;
         }
-
         this.context.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
         this.context.strokeStyle = PARTICLE_COLOR;
 
@@ -339,7 +331,6 @@ function particles(){
             this.context.restore();
         }
     };
-
     /**
      * Creates the animation loop
      *

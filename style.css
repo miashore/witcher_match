@@ -70,6 +70,7 @@ body{
     border: none;
     color: #fff;
     vertical-align: baseline;
+    font-size: 3vmin;
 }
 .reset {
     margin-bottom: 5%;
@@ -84,6 +85,14 @@ body{
 .btn:active, .btn:focus, .btn-info:active,
 .btn-info:active:focus {
     background-color: #810e0e;
+}
+.modal-content {
+    color: #fff;
+    font-family: 'Sorts Mill Goudy', Georgia, serif;
+    background-color: rgba(57,58,72,.8);
+    line-height: 2em;
+    font-size: 1.1em;
+    letter-spacing: .1em;
 }
 .health-stats {
     position: fixed;
