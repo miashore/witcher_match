@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    initializeGame();
+});
+
 var firstCardClicked = null;
 var secondCardClicked = null;
 var totalPossibleMatches = 9;
@@ -8,9 +12,16 @@ var trueMatch = 0;
 var gameplayCount = 1;
 
 function initializeGame(){
-    console.log('initialized');
     initializeClickHandler();
     particles();
+    shuffleCards();
+}
+function shuffleCards(){
+    for(var randomCards = []; randomCards.length <= 18;){
+        var i = Math.floor(Math.random() * $('.card').length);
+        randomCards.push($('.card').splice(i, 1)[0]);
+    }
+    $('#game-area').append(randomCards);
 }
 function initializeClickHandler(){
     $('.back').click(handleClick);
@@ -20,7 +31,6 @@ function initializeClickHandler(){
     healthMeter();
 }
 function handleClick(){
-    console.log("canBeClicked: " + canBeClicked);
     if(canBeClicked === true){
         cardClicked(this);
         attempts();
@@ -33,33 +43,27 @@ function flipCard(cardBack){
 function cardClicked(cardBack){
     flipCard(cardBack);
     if(firstCardClicked === null){
-        console.log('first card clicked');
         firstCardClicked = cardBack;
     } else {
-        console.log('second clicked');
         secondCardClicked = cardBack;
         canBeClicked = false;
         var firstCardImg = $(firstCardClicked).parent().find('.front img').attr('src');
         var secondCardImg = $(secondCardClicked).parent().find('.front img').attr('src');
         if(firstCardImg === secondCardImg){
-            console.log('they match');
             firstCardClicked = null;
             secondCardClicked = null;
             canBeClicked = true;
             matched = true;
             trueMatch++;
-            console.log(matched);
         } else{
-            console.log('they don\'t match');
             matched = false;
-            console.log(matched);
             timeOut();
         }
         accuracy();
     }
 }
 function attempts(){
-    if(canBeClicked == false || firstCardClicked == secondCardClicked){
+    if(canBeClicked === false || firstCardClicked === secondCardClicked){
         $('.attempts .value').text(matchCounter++);
     }
 }
@@ -92,8 +96,8 @@ function timeOut(){
     }, 2000);
 }
 function unflipCard(firstClicked, secondClicked){
-        $(firstClicked).parent().find('.back').removeClass('flipped');
-        $(secondClicked).last().removeClass('flipped');
+    $(firstClicked).parent().find('.back').removeClass('flipped');
+    $(secondClicked).last().removeClass('flipped');
 }
 function gamesPlayed() {
     $('.games-played .value').text(gameplayCount++);
@@ -101,7 +105,7 @@ function gamesPlayed() {
 function healthMeter(){
     var $healthBar = $('.progress-bar.progress-bar-danger');
     $('.back').click(function(){
-       if(matched == false){
+       if(matched === false){
            $healthBar.animate({
                width: 90 + '%'
            }, 500);
@@ -111,11 +115,11 @@ function healthMeter(){
 function staminaMeter() {
     var $staminaBar = $('.progress-bar-warning');
     $('.back').click(function(){
-        if(firstCardClicked != null) {
+        if(firstCardClicked !== null) {
             $staminaBar.animate({
                 width: '50%'
             }, 100);
-            if(secondCardClicked != null) {
+            if(secondCardClicked !== null) {
                 $staminaBar.animate({
                     width: '0%'
                 }, 100);
@@ -149,9 +153,9 @@ function particles(){
     };
     var proto = Particles.prototype;
     proto.init = function() {
-        this.createChildren()
-            .layout()
-            .enable();
+        this.createChildren();
+        this.layout();
+        this.enable();
     };
     proto.createChildren = function() {
         this.canvas = this.$element[0];
@@ -250,6 +254,6 @@ function particles(){
 function resetGame(){
     if(trueMatch === totalPossibleMatches){
         $('.front').parent().find('.back').removeClass('flipped');
+        shuffleCards();
     }
 }
-$(document).ready(initializeGame);
