@@ -32,8 +32,9 @@ function matchResetHandler(){
 function handleClick(){
     if(canBeClicked === true){
         cardClicked(this);
-        attempts();
         resetGame();
+    } else if(canBeClicked === false || firstCardClicked === secondCardClicked){
+        $('.attempts .value').text(matchCounter++);
     }
 }
 function shuffleCards(){
@@ -56,9 +57,7 @@ function cardClicked(cardBack){
         var firstCardImg = $(firstCardClicked).parent().find('.front img').attr('src');
         var secondCardImg = $(secondCardClicked).parent().find('.front img').attr('src');
         if(firstCardImg === secondCardImg){
-            firstCardClicked = null;
-            secondCardClicked = null;
-            canBeClicked = true;
+            cardValuesReset();
             matched = true;
             trueMatch++;
         } else{
@@ -68,10 +67,10 @@ function cardClicked(cardBack){
         accuracy();
     }
 }
-function attempts(){
-    if(canBeClicked === false || firstCardClicked === secondCardClicked){
-        $('.attempts .value').text(matchCounter++);
-    }
+function cardValuesReset(){
+    firstCardClicked = null;
+    secondCardClicked = null;
+    canBeClicked = true;
 }
 function accuracy(){
     var accuracyVal = (trueMatch/matchCounter)*100;
@@ -85,14 +84,13 @@ function matchReset(){
     $('.attempts .value').text('');
     $('.accuracy .value').text('');
     gamesPlayed();
+    shuffleCards();
 }
 function timeOut(){
     setTimeout(function(){
         staminaReplenish();
         unflipCard(firstCardClicked,secondCardClicked);
-        canBeClicked = true;
-        firstCardClicked = null;
-        secondCardClicked = null;
+        cardValuesReset();
     }, 2000);
 }
 function unflipCard(firstClicked, secondClicked){
@@ -106,12 +104,15 @@ function healthMeterClickHandler(){
     var $healthBar = $('.progress-bar.progress-bar-danger');
     var healthBarWidth = 100;
     $('.back').click(function(){
-       if(matched === false){
-           healthBarWidth -= 5;
-           $healthBar.animate({
-               width: healthBarWidth + '%'
-           }, 500);
+       if(firstCardClicked !== null && secondCardClicked !== null){
+           if(matched === false){
+               healthBarWidth -= 5;
+               $healthBar.animate({
+                   width: healthBarWidth + '%'
+               }, 300);
+           }
        }
+
     });
 }
 function staminaMeterClickHandler() {
@@ -126,6 +127,10 @@ function staminaMeterClickHandler() {
                     width: '0%'
                 }, 100);
             }
+        } else if(firstCardClicked === secondCardClicked){
+            $staminaBar.animate({
+                width:'100%'
+            }, 100);
         }
     });
 }
