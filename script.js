@@ -12,23 +12,22 @@ var trueMatch = 0;
 var gameplayCount = 1;
 
 function initializeGame(){
-    initializeClickHandler();
+    attachClickHandlers();
     particles();
     shuffleCards();
 }
-function shuffleCards(){
-    for(var randomCards = []; randomCards.length <= 18;){
-        var i = Math.floor(Math.random() * $('.card').length);
-        randomCards.push($('.card').splice(i, 1)[0]);
-    }
-    $('#game-area').append(randomCards);
+function attachClickHandlers(){
+    canBeClickedHandler();
+    matchResetHandler();
+    rulesClickHandler();
+    staminaMeterClickHandler();
+    healthMeterClickHandler();
 }
-function initializeClickHandler(){
+function canBeClickedHandler(){
     $('.back').click(handleClick);
+}
+function matchResetHandler(){
     $('.reset').click(matchReset);
-    rules();
-    staminaMeter();
-    healthMeter();
 }
 function handleClick(){
     if(canBeClicked === true){
@@ -36,6 +35,13 @@ function handleClick(){
         attempts();
         resetGame();
     }
+}
+function shuffleCards(){
+    for(var randomCards = []; randomCards.length <= 18;){
+        var i = Math.floor(Math.random() * $('.card').length);
+        randomCards.push($('.card').splice(i, 1)[0]);
+    }
+    $('#game-area').append(randomCards);
 }
 function flipCard(cardBack){
     $(cardBack).addClass('flipped');
@@ -80,16 +86,10 @@ function matchReset(){
     $('.accuracy .value').text('');
     gamesPlayed();
 }
-function wiggle(){
-    $('.back').click(function(){
-        $(this).effect('shake', {distance:2}, 300);
-    });
-}
 function timeOut(){
     setTimeout(function(){
         staminaReplenish();
         unflipCard(firstCardClicked,secondCardClicked);
-        wiggle();
         canBeClicked = true;
         firstCardClicked = null;
         secondCardClicked = null;
@@ -102,17 +102,19 @@ function unflipCard(firstClicked, secondClicked){
 function gamesPlayed() {
     $('.games-played .value').text(gameplayCount++);
 }
-function healthMeter(){
+function healthMeterClickHandler(){
     var $healthBar = $('.progress-bar.progress-bar-danger');
+    var healthBarWidth = 100;
     $('.back').click(function(){
        if(matched === false){
+           healthBarWidth -= 5;
            $healthBar.animate({
-               width: 90 + '%'
+               width: healthBarWidth + '%'
            }, 500);
        }
     });
 }
-function staminaMeter() {
+function staminaMeterClickHandler() {
     var $staminaBar = $('.progress-bar-warning');
     $('.back').click(function(){
         if(firstCardClicked !== null) {
@@ -133,7 +135,7 @@ function staminaReplenish(){
         width: '100%'
     }, 50);
 }
-function rules(){
+function rulesClickHandler(){
     $('.rules').click(function(){
         $('#rules-modal').modal('show');
     });
