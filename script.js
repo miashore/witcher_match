@@ -33,7 +33,8 @@ function handleClick(){
     if(canBeClicked === true){
         cardClicked(this);
         resetGame();
-    } else if(canBeClicked === false || firstCardClicked === secondCardClicked){
+    }
+    if(canBeClicked == false || firstCardClicked == secondCardClicked){
         $('.attempts .value').text(matchCounter++);
     }
 }
