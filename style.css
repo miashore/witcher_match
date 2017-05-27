@@ -55,7 +55,7 @@ body{
     border-bottom-left-radius: 0;
 }
 .panel-title, .value{
-    font-size: 3vmin;
+    font-size: 2.5vmin;
 }
 .panel-body {
     padding: 0;
@@ -70,7 +70,7 @@ body{
     border: none;
     color: #fff;
     vertical-align: baseline;
-    font-size: 3vmin;
+    font-size: 2.5vmin;
 }
 .reset {
     margin-bottom: 5%;
@@ -120,10 +120,6 @@ body{
     -webkit-box-shadow: 0 50px 100px 100px rgba(255, 0, 71, 0.31);
     -moz-box-shadow: 0 50px 100px 100px rgba(255, 0, 71, 0.31);
     box-shadow: 0 50px 100px 100px rgba(255, 0, 71, 0.31);
-}
-.particles {
-    width: 100%;
-    height: 100%;
 }
 #game-area {
     height: 100%;
@@ -197,28 +193,27 @@ body{
     line-height: 1em;
     margin-top: 1.5%;
 }
-.wiggle {
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
+.landscape {
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    font-size: 3vmax;
+    font-family: 'Exo', Helvetica, sans-serif;
 }
 
-@keyframes shake {
-    10%, 90% {
-        transform: translate3d(-1px, 0, 0);
-    }
 
-    20%, 80% {
-        transform: translate3d(2px, 0, 0);
+@media (orientation: portrait){
+    .landscape {
+        visibility: visible;
+        color: #fff;
+        width: 100vw;
+        position: relative;
     }
-
-    30%, 50%, 70% {
-        transform: translate3d(-4px, 0, 0);
+    .main-container {
+        visibility: hidden;
     }
-
-    40%, 60% {
-        transform: translate3d(4px, 0, 0);
+    .about-link {
+        visibility: hidden;
     }
 }
 
