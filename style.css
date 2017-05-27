@@ -42,6 +42,15 @@ body{
   text-decoration: none;
   color: #cd0000;
 }
+.audio-symbols {
+    position: absolute;
+    right: 0;
+    top: 10%;
+}
+.music-off, .music-on {
+    color: #fff;
+    font-size: 2em;
+}
 .main-container{
     height: 100%;
 }
