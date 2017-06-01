@@ -76,6 +76,11 @@ function cardClicked(cardBack){
         }
         accuracy();
     }
+    if(trueMatch === totalPossibleMatches) {
+        $('.front').parent().find('.back').removeClass('flipped');
+        showWinModal();
+        gameRefresh()
+    }
 }
 function cardValuesReset(){
     firstCardClicked = null;
@@ -125,6 +130,10 @@ function healthMeterClickHandler(){
                healthBar.animate({
                    width: healthBarWidth + '%'
                }, 200);
+               if(healthBarWidth === 0){
+                   showLossModal();
+                   gameRefresh();
+               }
            }
        }
     });
@@ -181,23 +190,24 @@ function musicOff(){
     $('.music-theme').trigger('pause');
 }
 function audioHandler(){
-    $('.audio-symbols').on('click', function(){
-        $('.music-on').click(musicOn);
-        $('.music-off').click(musicOff);
-    })
+    $('.music-on').click(musicOn);
+    $('.music-off').click(musicOff);
 }
 
 /*
  * Win Condition and Resetting
  */
 
-function gameRefreshOnWin(){
-    if(trueMatch === totalPossibleMatches){
-        $('.front').parent().find('.back').removeClass('flipped');
-        matchReset();
-        shuffleCards();
-        resetBars();
-    }
+function showWinModal(){
+    $('#win-modal').modal('show');
+}
+function showLossModal(){
+    $('#loss-modal').modal('show');
+}
+function gameRefresh(){
+    matchReset();
+    shuffleCards();
+    resetBars();
 }
 function matchReset(){
     $('.back').removeClass('flipped');
@@ -208,4 +218,7 @@ function matchReset(){
     gamesPlayed();
     shuffleCards();
     resetBars();
+}
+function fullReset(){
+    location.reload();
 }
