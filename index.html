@@ -15,11 +15,15 @@
     <!-- Heading -->
     <header class="page-header">
         <div class="logo">
-            <img src="imgs/wa/w3logo.png" alt="The Witcher 3 logo">
+            <img src="assets/imgs/wa/w3logo.png" alt="The Witcher 3 logo">
         </div>
-        <p class='about-link'>
+        <div class='about-link'>
           <a href="about.html">About</a>
-        </p>
+        </div>
+        <div class="audio-symbols">
+            <i  class="fa fa-3x fa-volume-off music-off"></i>
+            <i  class="fa fa-3x fa-volume-up audio-color music-on"></i>
+        </div>
     </header>
     <!-- Contains Stats and Game Area -->
     <div class="stats-container col-xs-2">
@@ -60,9 +64,43 @@
                         <h4 class="modal-title">Welcome to The Witcher 3 Memory Match game!</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Simply match the creature and character cards. Mismatches and monsters will deplete your health while other characters may be more amicable toward you. For every click there is a stamina cost. Keep track of your health and stamina below.</p>
+                        <p>Simply match the creature and character cards. Mismatches and monsters will deplete your health while matching prevents health loss. For every click there is a stamina cost. Keep track of your health and stamina below.</p>
                     </div>
                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="win-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">You've Won!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/imgs/wa/win_img.png" alt="win">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default reset pull-left" data-dismiss="modal">Play Again</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="loss-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4>You've Lost...and Roach left you high and dry</h4>
+                    </div>
+                    <div class="modal-body">
+                        <img class="loss-img" src="assets/imgs/wa/roach_flying.gif" alt="Loss Image">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onClick='fullReset()' class="btn btn-default reset pull-left" data-dismiss="modal">Play Again</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -72,76 +110,76 @@
         <!-- Game area -->
         <div id="game-area" class="container col-xs-10">
             <div class="card col-xs-2">
-                <div class="front thumbnail "><img src="imgs/wa/fiend.png" alt="fiend"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail "><img src="assets/imgs/wa/fiend.png" alt="fiend"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail "><img src="imgs/wa/griffin.png" alt="griffin"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail "><img src="assets/imgs/wa/griffin.png" alt="griffin"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail"><img src="imgs/wa/geralt.png" alt="geralt"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail"><img src="assets/imgs/wa/geralt.png" alt="geralt"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail"><img src="imgs/wa/wildhunt.png" alt="the wild hunt"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail"><img src="assets/imgs/wa/wildhunt.png" alt="the wild hunt"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail"><img src="imgs/wa/triss.png" alt="triss"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail"><img src="assets/imgs/wa/triss.png" alt="triss"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail"><img src="imgs/wa/geralt.png" alt="geralt"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail"><img src="assets/imgs/wa/geralt.png" alt="geralt"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail"><img src="imgs/wa/griffin.png" alt="griffin"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail"><img src="assets/imgs/wa/griffin.png" alt="griffin"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail"><img src="imgs/wa/yen.png" alt="yen"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail"><img src="assets/imgs/wa/yen.png" alt="yen"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail"><img src="imgs/wa/werewolf.png" alt="werewolf"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail"><img src="assets/imgs/wa/werewolf.png" alt="werewolf"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail"><img src="imgs/wa/swamphag.png" alt="swamphag"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail"><img src="assets/imgs/wa/swamphag.png" alt="swamphag"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail"><img src="imgs/wa/botchling.png" alt="botchling"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="yarn"></div>
+                <div class="front thumbnail"><img src="assets/imgs/wa/botchling.png" alt="botchling"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="yarn"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail"><img src="imgs/wa/werewolf.png" alt="werewolf"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail"><img src="assets/imgs/wa/werewolf.png" alt="werewolf"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail"><img src="imgs/wa/botchling.png" alt="botchling"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail"><img src="assets/imgs/wa/botchling.png" alt="botchling"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail"><img src="imgs/wa/triss.png" alt="triss"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail"><img src="assets/imgs/wa/triss.png" alt="triss"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail"><img src="imgs/wa/wildhunt.png" alt="the wild hunt"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail"><img src="assets/imgs/wa/wildhunt.png" alt="the wild hunt"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail"><img src="imgs/wa/swamphag.png" alt="swamphag"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail"><img src="assets/imgs/wa/swamphag.png" alt="swamphag"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail"><img src="imgs/wa/yen.png" alt="yen"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail"><img src="assets/imgs/wa/yen.png" alt="yen"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
             <div class="card col-xs-2">
-                <div class="front thumbnail"><img src="imgs/wa/fiend.png" alt="fiend"></div>
-                <div class="back thumbnail"><img src="imgs/wa/witcher-back01.png" alt="back"></div>
+                <div class="front thumbnail"><img src="assets/imgs/wa/fiend.png" alt="fiend"></div>
+                <div class="back thumbnail"><img src="assets/imgs/wa/witcher-back01.png" alt="back"></div>
             </div>
         </div>
     <div class="health-stats col-xs-12">
@@ -156,9 +194,12 @@
 
     </div>
 </div>
+<audio class="music-theme" src="assets/blood_and_wine.mp3" loop="loop" autoplay="autoplay"></audio>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/75462a5129.js"></script>
+
 <script src="script.js"></script>
 </body>
 </html>
