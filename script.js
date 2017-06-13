@@ -12,12 +12,15 @@ var healthBarWidth = 100;
  * Initialize Game, Show Spinner while Page Loads and Attach Click Handlers
  */
 
-$(window).load(function(){
-    initializeGame();
-    hideLoader();
-});
 $(window).ready(function(){
     showLoader();
+    $(window).load(function(){
+        initializeGame();
+        hideLoader();
+        setTimeout(function(){
+            appendLargeAssets();
+        }, 500);
+    });
 });
 function showLoader(){
     $('.main-container').hide();
@@ -31,7 +34,6 @@ function hideLoader(){
 function initializeGame(){
     attachClickHandlers();
     shuffleCards();
-    appendLossImage();
 }
 function attachClickHandlers(){
     attemptsClickHandler();
@@ -48,8 +50,9 @@ function shuffleCards(){
     }
     $('#game-area').append(randomCards);
 }
-function appendLossImage(){
+function appendLargeAssets(){
     $('.loss-img').attr('src', 'assets/imgs/wa/roach_flying.gif');
+    $('.music-theme').attr('src', 'assets/blood_and_wine.mp3');
 }
 function attemptsClickHandler(){
     $('.back').on('click', handleAttemptIncrements);
