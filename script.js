@@ -6,18 +6,32 @@ var canBeClicked = true;
 var matched = true;
 var trueMatch = 0;
 var gameplayCount = 1;
+var healthBarWidth = 100;
 
 /*
- * Initialize Game and Attach Click Handlers
+ * Initialize Game, Show Spinner while Page Loads and Attach Click Handlers
  */
 
-$(document).ready(function(){
+$(window).load(function(){
     initializeGame();
+    hideLoader();
 });
-
+$(window).ready(function(){
+    showLoader();
+});
+function showLoader(){
+    $('.main-container').hide();
+    $('#loader').show();
+}
+function hideLoader(){
+    $('#loader').hide();
+    $('.loader-background').hide();
+    $('.main-container').show();
+}
 function initializeGame(){
     attachClickHandlers();
     shuffleCards();
+    appendLossImage();
 }
 function attachClickHandlers(){
     attemptsClickHandler();
@@ -33,6 +47,9 @@ function shuffleCards(){
         randomCards.push($('.card').splice(i, 1)[0]);
     }
     $('#game-area').append(randomCards);
+}
+function appendLossImage(){
+    $('.loss-img').attr('src', 'assets/imgs/wa/roach_flying.gif');
 }
 function attemptsClickHandler(){
     $('.back').on('click', handleAttemptIncrements);
@@ -77,9 +94,7 @@ function cardClicked(cardBack){
         accuracy();
     }
     if(trueMatch === totalPossibleMatches) {
-        $('.front').parent().find('.back').removeClass('flipped');
         showWinModal();
-        gameRefresh()
     }
 }
 function cardValuesReset(){
@@ -122,20 +137,18 @@ function gamesPlayed() {
 
 function healthMeterClickHandler(){
     var healthBar = $('.progress-bar.progress-bar-danger');
-    var healthBarWidth = 100;
     $('.card').on('click', function(){
-       if(firstCardClicked !== null && secondCardClicked !== null){
-           if(matched === false){
-               healthBarWidth -= 5;
-               healthBar.animate({
-                   width: healthBarWidth + '%'
-               }, 200);
-               if(healthBarWidth === 0){
-                   showLossModal();
-                   gameRefresh();
-               }
-           }
-       }
+        if(firstCardClicked !== null && secondCardClicked !== null){
+            if(matched === false){
+                healthBarWidth -= 5;
+                healthBar.animate({
+                    width: healthBarWidth + '%'
+                }, 200);
+                if(healthBarWidth === 0){
+                    showLossModal();
+                }
+            }
+        }
     });
 }
 function healthReplenish(){
@@ -204,21 +217,15 @@ function showWinModal(){
 function showLossModal(){
     $('#loss-modal').modal('show');
 }
-function gameRefresh(){
-    matchReset();
-    shuffleCards();
-    resetBars();
-}
 function matchReset(){
     $('.back').removeClass('flipped');
     matchCounter = 1;
     trueMatch = 0;
+    healthBarWidth = 100;
     $('.attempts .value').text('');
     $('.accuracy .value').text('');
     gamesPlayed();
     shuffleCards();
     resetBars();
 }
-function fullReset(){
-    location.reload();
-}
+
