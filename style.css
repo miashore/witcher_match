@@ -1,10 +1,10 @@
-body{
+body {
     background: url(assets/imgs/wa/bkgd.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    margin:0;
+    margin: 0;
 }
 
 /*
@@ -20,7 +20,7 @@ body{
     margin: -75px 0 0 -75px;
     border: 16px solid #f3f3f3;
     border-radius: 50%;
-    border-top: 16px solid #CC1C28;
+    border-top: 16px solid #cc1c28;
     background-color: #1c2533;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
@@ -46,8 +46,12 @@ body{
 }
 
 @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
 }
 
 /*
@@ -67,7 +71,10 @@ body{
 .page-header {
     margin: 0 0 2% 0;
     border: none;
-    background: radial-gradient(black 12%, transparent 9%) 0 0, radial-gradient(black 12%, transparent 0%) 8px 8px, radial-gradient(rgba(240,0,50,.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(240,0,50,.1) 15%, transparent 20%) 8px 9px;
+    background: radial-gradient(black 12%, transparent 9%) 0 0,
+        radial-gradient(black 12%, transparent 0%) 8px 8px,
+        radial-gradient(rgba(240, 0, 50, 0.1) 15%, transparent 20%) 0 1px,
+        radial-gradient(rgba(240, 0, 50, 0.1) 15%, transparent 20%) 8px 9px;
     background-color: #330b0b;
     background-size: 15px 15px;
 }
@@ -88,12 +95,13 @@ body{
     position: fixed;
     top: 7.25%;
     left: 0;
-    transform: translate(0,-50%);
+    transform: translate(0, -50%);
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
 }
-.about-link a, .audio-symbols {
-    color: #1F1812;
+.about-link a,
+.audio-symbols {
+    color: #1f1812;
 }
 .about-link a:hover {
     text-decoration: none;
@@ -119,7 +127,7 @@ body{
 /*
  * Main Gaming Area Styling
  */
-.main-container{
+.main-container {
     height: 100%;
 }
 #game-area {
@@ -129,13 +137,14 @@ body{
     height: 25vh;
     position: relative;
 }
-.front, .back {
+.front,
+.back {
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
 }
 .back {
-    z-index:1;
+    z-index: 1;
 }
 .thumbnail {
     padding: 0;
@@ -152,16 +161,17 @@ body{
 /*
  * Stats Area Styling
  */
-.stats-container{
+.stats-container {
     text-align: center;
     padding-left: 0;
 }
 .panel {
     border: none;
-    background-color: rgba(255,255,255,0.4);
+    background-color: rgba(255, 255, 255, 0.4);
     border-bottom-left-radius: 0;
 }
-.panel-title, .value{
+.panel-title,
+.value {
     font-size: 2.5vmin;
 }
 .panel-body {
@@ -170,10 +180,12 @@ body{
 .panel-heading {
     border-top-left-radius: 0;
 }
-.panel-heading, button, .btn {
+.panel-heading,
+button,
+.btn {
     font-family: 'Exo', Helvetica, sans-serif;
     text-transform: uppercase;
-    background-color: #393A48;
+    background-color: #393a48;
     border: none;
     color: #fff;
     vertical-align: baseline;
@@ -193,7 +205,9 @@ body{
 .btn:hover {
     background-color: #c90000;
 }
-.btn:active, .btn:focus, .btn-info:active,
+.btn:active,
+.btn:focus,
+.btn-info:active,
 .btn-info:active:focus {
     background-color: #810e0e;
 }
@@ -203,10 +217,10 @@ body{
 .modal-content {
     color: #fff;
     font-family: 'Sorts Mill Goudy', Georgia, serif;
-    background-color: rgba(57,58,72,.8);
+    background-color: rgba(57, 58, 72, 0.8);
     line-height: 2em;
     font-size: 1.1em;
-    letter-spacing: .1em;
+    letter-spacing: 0.1em;
     border-radius: 0;
 }
 .modal-footer {
@@ -222,7 +236,7 @@ body{
  */
 .health-stats {
     position: fixed;
-    bottom:0;
+    bottom: 0;
     left: 0;
 }
 .health-stats.col-xs-12 {
@@ -239,7 +253,7 @@ body{
     height: 2vh;
     margin: 0;
     border-radius: 0;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 .progress:last-child {
     height: 1vh;
@@ -266,14 +280,14 @@ body{
     margin: 10%;
 }
 .contact-links a {
-    color: #CC1C28;
+    color: #cc1c28;
 }
 .contact-links a:hover {
     color: #fff;
 }
 .about {
     font-family: 'Sorts Mill Goudy', Georgia, serif;
-    font-size: 120%;
+    font-size: 1.2em;
     color: #ffffff;
     text-shadow: 5px 5px 10px #000;
     line-height: 2em;
@@ -288,11 +302,11 @@ body{
     background-color: rgba(255, 0, 71, 0.31);
     padding: 5%;
     float: left;
-    letter-spacing: .15em;
+    letter-spacing: 0.15em;
 }
 .skills {
     font-family: 'Exo', Helvetica, sans-serif;
-    font-size: .7em;
+    font-size: 0.7em;
     line-height: 1em;
     margin-top: 1.5%;
 }
@@ -300,7 +314,7 @@ body{
 /*
  * Media Queries
  */
-@media (orientation: portrait){
+@media (orientation: portrait) {
     .landscape {
         visibility: visible;
         color: #fff;
@@ -315,7 +329,7 @@ body{
     }
 }
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
     .links {
         top: 15%;
         left: -10%;
@@ -327,4 +341,3 @@ body{
         width: 100%;
     }
 }
-
