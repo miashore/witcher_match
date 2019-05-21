@@ -62,7 +62,7 @@ body {
     position: absolute;
     text-align: center;
     font-size: 3vmax;
-    font-family: 'Exo', Helvetica, sans-serif;
+    font-family: "Exo", Helvetica, sans-serif;
 }
 
 /*
@@ -87,7 +87,7 @@ body {
     margin: 3% 0 0 0;
 }
 .about-link {
-    font-family: 'Exo', Helvetica, sans-serif;
+    font-family: "Exo", Helvetica, sans-serif;
     font-size: 2.5vmin;
     text-transform: uppercase;
     padding: 1%;
@@ -183,7 +183,7 @@ body {
 .panel-heading,
 button,
 .btn {
-    font-family: 'Exo', Helvetica, sans-serif;
+    font-family: "Exo", Helvetica, sans-serif;
     text-transform: uppercase;
     background-color: #393a48;
     border: none;
@@ -195,7 +195,7 @@ button,
     margin-bottom: 5%;
 }
 .value {
-    font-family: 'Sorts Mill Goudy', Georgia, serif;
+    font-family: "Sorts Mill Goudy", Georgia, serif;
     color: #fff;
 }
 
@@ -216,7 +216,7 @@ button,
 }
 .modal-content {
     color: #fff;
-    font-family: 'Sorts Mill Goudy', Georgia, serif;
+    font-family: "Sorts Mill Goudy", Georgia, serif;
     background-color: rgba(57, 58, 72, 0.8);
     line-height: 2em;
     font-size: 1.1em;
@@ -286,14 +286,14 @@ button,
     color: #fff;
 }
 .about {
-    font-family: 'Sorts Mill Goudy', Georgia, serif;
-    font-size: 1.2em;
+    font-family: "Sorts Mill Goudy", Georgia, serif;
+    font-size: 120%;
     color: #ffffff;
     text-shadow: 5px 5px 10px #000;
     line-height: 2em;
 }
 .intro {
-    font-family: 'Exo', Helvetica, sans-serif;
+    font-family: "Exo", Helvetica, sans-serif;
     font-size: 2em;
     font-style: italic;
 }
@@ -305,7 +305,7 @@ button,
     letter-spacing: 0.15em;
 }
 .skills {
-    font-family: 'Exo', Helvetica, sans-serif;
+    font-family: "Exo", Helvetica, sans-serif;
     font-size: 0.7em;
     line-height: 1em;
     margin-top: 1.5%;
@@ -339,5 +339,20 @@ button,
     }
     .about-me {
         width: 100%;
+    }
+}
+
+@media (min-height: 320px) {
+    .modal-footer {
+        height: 8vh;
+    }
+}
+
+@media (min-height: 767px) {
+    .modal-content {
+        font-size: 1.3em;
+    }
+    .modal-footer {
+        height: 7vh;
     }
 }
