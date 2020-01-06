@@ -224,7 +224,6 @@ button,
     border-radius: 0;
 }
 .modal-footer {
-    height: 10vh;
     padding: 1%;
 }
 .loss-img {
@@ -266,24 +265,20 @@ button,
  * About Page Styling
  */
 .img-container {
-    width: 40%;
-    float: left;
+    width: 25%;
+    display: inline-block;
 }
 .author-pic {
     width: 100%;
-    border-radius: 4px;
-}
-.contact-links {
-    text-align: center;
 }
 .contact-links i {
-    margin: 10%;
+    margin: 10% 10% 10% 0;
 }
 .contact-links a {
-    color: #cc1c28;
+    color: #fff;
 }
 .contact-links a:hover {
-    color: #fff;
+    color: #cc1c28;
 }
 .about {
     font-family: "Sorts Mill Goudy", Georgia, serif;
@@ -298,11 +293,14 @@ button,
     font-style: italic;
 }
 .about-me {
-    width: 60%;
     background-color: rgba(255, 0, 71, 0.31);
-    padding: 5%;
-    float: left;
     letter-spacing: 0.15em;
+}
+.about-text {
+    width: 65%;
+    vertical-align: top;
+    display: inline-block;
+    padding: 7% 5% 0;
 }
 .skills {
     font-family: "Exo", Helvetica, sans-serif;
@@ -339,20 +337,5 @@ button,
     }
     .about-me {
         width: 100%;
-    }
-}
-
-@media (min-height: 320px) {
-    .modal-footer {
-        height: 8vh;
-    }
-}
-
-@media (min-height: 767px) {
-    .modal-content {
-        font-size: 1.3em;
-    }
-    .modal-footer {
-        height: 7vh;
     }
 }
